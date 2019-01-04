@@ -39,14 +39,14 @@ int check_n(int _x,int _y){
 
 //_1  
   if(cellgrid[_x-1][_y-1]==true){counted++;}
-  if(cellgrid[_x][_y-1]==true){counted++;}
+  if(cellgrid[_x][_y-1]  ==true){counted++;}
   if(cellgrid[_x+1][_y-1]==true){counted++;}
 //_2
-  if(cellgrid[_x-1][_y]==true){counted++;}  
-  if(cellgrid[_x+1][_y]==true){counted++;}
+  if(cellgrid[_x-1][_y]  ==true){counted++;}  
+  if(cellgrid[_x+1][_y]  ==true){counted++;}
 //_3
   if(cellgrid[_x-1][_y+1]==true){counted++;}
-  if(cellgrid[_x][_y+1]==true){counted++;}
+  if(cellgrid[_x][_y+1]  ==true){counted++;}
   if(cellgrid[_x+1][_y+1]==true){counted++;}
 
   return counted;
@@ -83,7 +83,6 @@ void update(int j,int i){
   }
 
 };
-
 
 
 int main(){
@@ -128,7 +127,6 @@ bool m_enter=false;
 bool f_enter=false;
 std::string pltype = "Life";
 
-
 while(window.isOpen()){
 	sf::Event event;
 	tick++;
@@ -140,30 +138,6 @@ while(window.isOpen()){
 	  if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
 	    window.close();
 	  }
-	  
-	  if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)){
-	      
-	  }
-	  else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)){
-	      
-	  }
-	  else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)){
-	      
-	  }
-	  else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)){
-	      
-	  }
-	  else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)){
-	      
-	  }
-	  else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)){
-	      
-	  }
-	  else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)){
-	      
-	  }
-	  
-          
 	  if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
 	      m_left=true;
 	  }else{m_left=false;}
@@ -192,9 +166,6 @@ while(window.isOpen()){
 		  m_enter=true;
 	     
 	  }else{m_enter=false;}
-	    
-
-	  
 	
 	  if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
             if(sp){
@@ -209,12 +180,13 @@ while(window.isOpen()){
 	
   window.clear();
   int m_delay = 2;
+  
 if(movetick>m_delay){
   movetick=0;
   if(m_enter){
     if(!f_enter){
-    f_enter=true;
-    bool Break = false;
+      f_enter=true;
+      bool Break = false;
       if(world.cellgrid[pos_x][pos_y]==true){
         world.cellgrid[pos_x][pos_y]=false; Break=true;}
       if(world.cellgrid[pos_x][pos_y]==false&&Break==false){
@@ -276,11 +248,8 @@ if(paused == false){
   window.draw(sbox);
 }
 
-
   window.display();
 
 }
-
-
   return 0;
 }
